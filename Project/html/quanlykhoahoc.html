@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lí sinh viên</title>
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col-4">
+        <img src="./img/Ellipse 6.png" alt="">
+        <p>Để nông dân biết Code </p>
+      </div>
+      <div class="col-4">
+        <p>HỆ THỐNG QUẢN LÝ SINH VIÊN RIKKEI </p>
+      </div>
+      <div class="col-4">
+        <i class="fa-solid fa-bell"></i>
+        <button  id="btnLogOut" value="Đăng Xuất">Đăng Xuất</button>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-2">
+      <div><a href="javascript:resetManagement()"><i class="fa-sharp fa-solid fa-house"></i>Bảng điều khiển</a></div>
+      <div><a href="javascript:classroomManagement()"><i class="fa-sharp fa-solid fa-house"></i>Quản lý khóa học</a></div>
+      <div><a href="#"><i class="fa-sharp fa-solid fa-house"></i>Quản lý lớp học</a></div>
+      <div><a href="#"><i class="fa-solid fa-graduation-cap"></i>Quản lý sinh viên</a></div>
+      <div><a href="#"><i class="fa-solid fa-chart-simple"></i>Quản lý khóa học</a></div>
+      </div>
+      <div class="col-10">
+         <button>Thêm Mới</button>
+         <input type="text" name="searchCourse" id="searchCourse" placeholder="Nhập từ khóa học tìm kiếm">
+         <button>Tìm Kiếm</button>
+         <label for="">Sắp xếp</label>
+         <select name="sort" id="sort" onchange="handSortCatalog()">
+            <option value=""></option>
+            <option value="catalogNameASC">Catalog Name ASC</option>
+            <option value="catalogNameDESC">Catalog Name DESC</option>
+            <option value="priorityASC">Priority ASC</option>
+            <option value="priorityDESC">Priority DESC</option>
+        </select>
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Mã khóa học</th>
+              <th>Tên khóa học</th>
+              <th>Thời gian(giờ)</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="content">
+
+          </tbody>
+        </table>
+        <a href="javascript:previewPage()" id="preview">Preview</a>
+        <ul id="listPages">
+          <!-- <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a> -->
+
+        </ul>
+        <a href="javascript:nextPage()" id="next">Next</a>
+      </div>
+    </div>
+    <div class="row text-center">&copy; Copyright Rikkei Academy @2023</div>
+  </div>
+  <script src="./quanlykhoahoc.js"></script>
+</body>
+</html>
